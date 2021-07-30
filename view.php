@@ -6,7 +6,6 @@ require_once "backend/connection.php";
     if (isset($_GET["q"])) {
         $get = "SELECT * FROM `content` WHERE user_key='$_GET[q]' LIMIT 1";
         $find_content = mysqli_query($conn,$get);
-
         //check for content
         if(mysqli_num_rows($find_content) > 0){
     
@@ -44,10 +43,9 @@ require_once "backend/connection.php";
                            echo $row["writeup"];
                        }//end of while
                     }//end of row
-                
-                else{
-                    header("location: index.php");
-                }//end of fetch
+                    else{
+                        header("location: index.php");
+                    }//end of fetch
             }
                     ?>
                 </textarea>
@@ -55,8 +53,6 @@ require_once "backend/connection.php";
                 <a href="https://www.facebook.com/"><button class="btn btn-primary"><i class="fab fa-facebook"></i></button></a>
                 <a href="https://wa.me/"><button class="btn btn-success"><i class="fab fa-whatsapp"></i></button></a>
                 <a href="https://t.me/"><button class="btn btn-primary"><i class="fab fa-telegram"></i></button></a>
-
-
         </center>
     </section>
     
@@ -64,7 +60,6 @@ require_once "backend/connection.php";
     <script>
 
         //adssign page address to the paragraph tag
-      
         function copyURL() {
             let x = document.getElementById("content_link");
             x.select();

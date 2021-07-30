@@ -4,15 +4,10 @@ require "backend/connection.php";
 
 //check the index content
 if (isset($_GET["send_text"])) {
-   // echo "<script>alert('vivek');</script>";
-   $text = mysqli_real_escape_string($conn,$_GET["user_text"]);
-   $key = uniqid();
-//    echo $key;
-//    echo $text;
-
+    $text = mysqli_real_escape_string($conn,$_GET["user_text"]);
+    $key = uniqid();
     $insert_query = "INSERT INTO `content` (`user_key`, `writeup`) VALUES ('$key', '$text')";
     $send_info = mysqli_query($conn,$insert_query);
-
     if ($send_info) {
         header("location: view.php?q=$key");
     }
