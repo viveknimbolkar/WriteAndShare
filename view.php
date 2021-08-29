@@ -46,6 +46,7 @@ require_once "backend/connection.php";
                     else{
                         header("location: index.php");
                     }//end of fetch
+                    
             }
                     ?>
                 </textarea>
