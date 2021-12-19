@@ -2,9 +2,7 @@ body {
   margin: 0;
   padding: 0;
 }
-header {
-  width: 100%;
-}
+
 h1 {
   font-family: "Indie Flower", cursive;
   font-weight: 900;
@@ -22,7 +20,76 @@ textarea {
   font-size: 1.7rem;
   font-family: sans-serif;
 }
-a {
-  text-decoration: none;
+
+nav {
+  background-color: rgb(19, 15, 15);
+  border-radius: 30px;
+
 }
 
+nav ul {
+  overflow: auto;
+}
+
+nav li {
+  float: left;
+  list-style: none;
+  margin: 13px 20px;
+
+}
+
+nav li a {
+  padding: 3px 3px;
+  text-decoration: none;
+  color: white;
+}
+
+nav li a:hover {
+  color: red
+}
+
+.search {
+  float: right;
+  color: white;
+  padding: 12px 75px;
+}
+
+nav input {
+  border: 2px solid black;
+  border-radius: 13px;
+  padding: 3px 17px;
+  width: 150px;
+}
+.thought{
+  border:1px solid black;
+  margin-left:200px;
+  margin-right:200px; 
+  background-color:green;
+}
+
+.thought{
+  border-style:solid;
+  margin-left:250px;
+  margin-right: 160px;
+  margin-top: 30px;
+  height: auto;
+  padding-top:50px;
+  padding-right:10px ;
+  padding-bottom: 20px;
+ text-align:start ;
+ padding-left: 20px;
+ border-radius: 5px 110px / 100px;
+ border-left: thick double #7a0202;
+border-right: thick double #7a0202;
+background-color: bisque;
+
+ }
+ .name{
+   border-style: solid;
+   border-width: 1px;
+   margin-left:500px ;
+   height:20px;
+   font-style: italic;
+   margin-top:20px;
+   background-color:white ;
+}  

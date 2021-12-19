@@ -28,14 +28,17 @@ require_once "backend/connection.php";
 </head>
 
 <body>
-    <header class="bg-primary p-2 text-white">
-        <center>
-            <strong>
-                <a href="/">
-                    <h1>WRITE & SHARE</h1>
-                </a>
-            </strong>
-        </center>
+<header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="backend/thoughts.php">Thouthgs</a></li>
+
+                <div class="search">
+                    <input type="text" name="search" id="search" placeholder="Search this website">
+                </div>
+            </ul>
+        </nav>
     </header>
     <marquee behavior="scroll" direction="left">You cannot change this text.</marquee>
 
@@ -59,11 +62,16 @@ require_once "backend/connection.php";
                     ?>
                 </textarea>
             <h4>Also share on:</h4>
-            <a href="https://www.facebook.com/"><button class="btn btn-primary"><i
-                        class="fab fa-facebook"></i></button></a>
-            <a href="https://wa.me/?text=urlencodedtext" id="whatsapp"><button class="btn btn-success"><i
-                        class="fab fa-whatsapp"></i></button></a>
-            <a href="https://t.me/"><button class="btn btn-primary"><i class="fab fa-telegram"></i></button></a>
+            <a id="whatsapp">
+                <button class="btn btn-success">
+                    <i class="fab fa-whatsapp"></i>
+                </button>
+            </a>
+            <a id="telegram">
+                <button class="btn btn-primary">
+                    <i class="fab fa-telegram"></i>
+                </button>
+            </a>
         </center>
     </section>
 
@@ -71,7 +79,11 @@ require_once "backend/connection.php";
     <script>
         //create whatsapp link
         var content = document.getElementById("maintext").value;
-        document.getElementById("whatsapp").setAttribute("href", "https://wa.me/?text=" + content);
+        document.getElementById("whatsapp").setAttribute("href", "https://wa.me/?text=" + encodeURI(content));
+
+        //create telegram link
+        var author = document.getElementById("author").value;
+        document.getElementById("whatsapp").setAttribute("href", "https://t.me/share/url?url="+encodeURI(author)+"&text="+encodeURI(content)+"");
 
         //adssign page address to the paragraph tag
         function copyURL() {
